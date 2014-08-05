@@ -32,8 +32,8 @@ For now you will need to do this for each line e.g. for
 at ? (/js/140805174136/getaround-min.js:8:11930)
 ```
 Run:
-*Notice* that the path is .map, this is the path to the .map file not the min.js file.
-
 ```
 app.js --path=/js/140805174136/getaround-min.js.map --line=8 --col=11930
 ```
+**Notice** that the path is .map, this is the path to the .map file not the min.js file.
+
