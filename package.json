@@ -19,7 +19,8 @@
     "url": "https://github.com/jane-doe/node-example/issues"
   },
   "dependencies": {
-    "source-map": "0.1.38"
+    "source-map": "0.1.38",
+    "minimist": "0.2.0"
   }
 
 }

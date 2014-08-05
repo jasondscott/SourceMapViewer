@@ -2,19 +2,17 @@
 
 var sourceMap = require('source-map'),
     fs = require('fs'),
-    http = require('http');
+    http = require('http'),
+    argv = require('minimist')(process.argv.slice(2));
 
-//fs.readFile('./getaround-min.map', 'utf8', function (err,data) {
-//  if (err) {
-//    return console.log(err);
-//  }
-//  getLineInfo(data);
-//});
-
+if (!(argv && argv.path && argv.line && argv.col)) {
+  console.log("Usage: app.js --path=/js/140805174136/getaround-min.js.map --line=8 --col=11930")
+  return;
+}
 
 var options = {
   hostname: 'www.getaround.com',
-  path: '/js/140805174136/getaround-min.js.map'
+  path: argv.path
 };
 
 var callback = function(response) {
@@ -39,8 +37,8 @@ function getLineInfo(data) {
   var smc = new sourceMap.SourceMapConsumer(data);
 
   console.log(smc.originalPositionFor({
-    line: 8,
-    column: 11949
+    line: argv.line,
+    column: argv.col
   }));
 }
 
