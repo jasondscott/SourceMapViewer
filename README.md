@@ -37,3 +37,7 @@ app.js --path=/js/140805174136/getaround-min.js.map --line=8 --col=11930
 ```
 **Notice** that the path is .map, this is the path to the .map file not the min.js file.
 
+This command produces:
+```
+{ source: 'libs/raven.js', line: 1876, column: 0, name: null }
+```
